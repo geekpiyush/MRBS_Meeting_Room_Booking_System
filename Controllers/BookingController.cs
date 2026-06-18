@@ -8,5 +8,9 @@ namespace MRBS_BSES.Controllers
         {
             return View();
         }
+        public IActionResult MyBooking()
+        {
+            return View();
+        }
     }
 }

@@ -158,8 +158,55 @@
             <i class="bi bi-building"></i> MRBS
         </div>
 
-        <div class="user-box">
-            <div class="avatar">P</div>
+        <div class="dropdown">
+
+            <button class="btn btn-light border dropdown-toggle d-flex align-items-center gap-2"
+                    type="button"
+                    data-bs-toggle="dropdown">
+
+                <div class="avatar">
+                    P
+                </div>
+
+                <span class="d-none d-md-inline">
+                    Piyush
+                </span>
+
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <i class="bi bi-person-circle me-2"></i>
+                        My Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a class="dropdown-item"
+                       asp-controller="Booking"
+                       asp-action="MyBooking">
+
+                        <i class="bi bi-calendar-check me-2"></i>
+                        My Bookings
+                    </a>
+                </li>
+
+                <li><hr class="dropdown-divider"></li>
+
+                <li>
+                    <a class="dropdown-item text-danger"
+                       asp-controller="Account"
+                       asp-action="Logout">
+
+                        <i class="bi bi-box-arrow-right me-2"></i>
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+
         </div>
 
     </header>
@@ -185,7 +232,7 @@
             </li>
 
             <li>
-                <a class="nav-link" href="#">
+                <a class="nav-link" asp-action="MyBooking" asp-controller="Booking">
                     <i class="bi bi-calendar-check"></i>
                     My Bookings
                 </a>
@@ -238,9 +285,9 @@
             Book
         </a>
 
-        <a href="#">
-            <i class="bi bi-door-open"></i>
-            Rooms
+        <a asp-action="MyBooking" asp-controller="Booking">
+            <i class="bi bi-calendar-check"></i>
+            My Bookings
         </a>
 
         <a href="#">

@@ -1,0 +1,54 @@
+﻿.booking-card-mobile {
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+    .booking-header h6 {
+        margin: 0;
+        font-weight: 600;
+    }
+
+.booking-details p {
+    margin-bottom: 8px;
+    color: #6c757d;
+}
+
+.booking-details i {
+    width: 20px;
+}
+
+.booking-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+    .booking-actions button {
+        flex: 1;
+    }
+
+@media (max-width: 576px) {
+
+    .container-fluid {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        border-radius: 10px;
+    }
+}
