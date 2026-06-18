@@ -1,0 +1,200 @@
+﻿@{
+    ViewData["Title"] = "Book Meeting Room";
+}
+<style>
+    .fc {
+        font-size: 14px;
+    }
+
+    .fc-toolbar-title {
+        font-size: 1.1rem !important;
+        font-weight: 600;
+    }
+
+    .fc-timegrid-slot {
+        height: 50px !important;
+    }
+
+    .fc-event {
+        border-radius: 8px;
+        border: none;
+    }
+
+    .card {
+        border-radius: 16px;
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 10px;
+    }
+
+    #selectedSlot {
+        min-height: 60px;
+    }
+</style>
+<div class="container-fluid">
+
+    <div class="row">
+
+ 
+
+        <div class="col-lg-4 mb-4">
+
+            <div class="card shadow-sm border-0 h-100">
+
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Meeting Details</h5>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label class="form-label">Meeting Title</label>
+                        <input class="form-control" placeholder="Project Review Meeting">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Meeting Room</label>
+                        <select class="form-select">
+                            <option>Board Room</option>
+                            <option>Conference Room A</option>
+                            <option>Conference Room B</option>
+                            <option>Training Room</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Participants</label>
+                        <input type="number" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Purpose</label>
+                        <textarea rows="4" class="form-control"></textarea>
+                    </div>
+
+                    <hr>
+
+                    <div class="alert alert-primary">
+
+                        <div>
+                            <strong>Selected Time</strong>
+                        </div>
+
+                        <div id="selectedSlot">
+                            Click on calendar to select slot
+                        </div>
+
+                    </div>
+
+                    <button class="btn btn-primary w-100">
+                        Book Room
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-header bg-white d-flex justify-content-between">
+
+                    <h5 class="mb-0">
+                        Room Availability
+                    </h5>
+
+                    <span class="badge bg-success">
+                        30 Minute Slots
+                    </span>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div id="bookingCalendar"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var calendarEl = document.getElementById('bookingCalendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+
+                initialView: 'timeGridDay',
+
+                height: "auto",
+
+                selectable: true,
+
+                nowIndicator: true,
+
+                slotDuration: '00:30:00',
+
+                slotLabelInterval: '00:30:00',
+
+                slotMinTime: '09:00:00',
+
+                slotMaxTime: '18:00:00',
+
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: ''
+                },
+
+                select: function(info) {
+
+                    document.getElementById('selectedSlot').innerHTML =
+                        "<strong>Start:</strong> "
+                        + info.start.toLocaleString()
+                        + "<br>"
+                        + "<strong>End:</strong> "
+                        + info.end.toLocaleString();
+                },
+
+                events: [
+
+                    {
+                        title: 'Booked',
+                        start: '2026-06-18T10:00:00',
+                        end: '2026-06-18T11:00:00',
+                        color: '#dc3545'
+                    },
+
+                    {
+                        title: 'Booked',
+                        start: '2026-06-18T14:00:00',
+                        end: '2026-06-18T15:30:00',
+                        color: '#dc3545'
+                    }
+
+                ]
+
+            });
+
+            calendar.render();
+
+        });
+
+    </script>
+
+}

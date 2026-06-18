@@ -1,0 +1,294 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+<style>
+    .card {
+        border-radius: 14px;
+    }
+
+    .card-header {
+        border-bottom: 1px solid #f1f1f1;
+        font-weight: 600;
+    }
+
+    .table td,
+    .table th {
+        vertical-align: middle;
+    }
+
+    .btn-primary {
+        border-radius: 10px;
+    }
+
+    .badge {
+        padding: 8px 12px;
+    }
+</style>
+<div class="container-fluid">
+
+    <!-- Header -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold mb-1">Dashboard</h2>
+            <small class="text-muted">
+                Welcome back, Piyush 👋
+            </small>
+        </div>
+
+        <a href="#" class="btn btn-primary">
+            <i class="bi bi-calendar-plus"></i>
+            Book Meeting Room
+        </a>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="row g-3 mb-4">
+
+        <div class="col-6 col-lg-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <small class="text-muted">Available Rooms</small>
+                    <h3 class="fw-bold text-success mt-2">12</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <small class="text-muted">Occupied Rooms</small>
+                    <h3 class="fw-bold text-danger mt-2">5</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <small class="text-muted">Today's Meetings</small>
+                    <h3 class="fw-bold mt-2">18</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-lg-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <small class="text-muted">My Bookings</small>
+                    <h3 class="fw-bold mt-2">3</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Available Rooms -->
+
+        <div class="col-lg-8">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">
+                        Available Meeting Rooms
+                    </h5>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <div class="border rounded p-3">
+
+                                <div class="d-flex justify-content-between">
+
+                                    <h6 class="fw-bold">
+                                        Conference Room A
+                                    </h6>
+
+                                    <span class="badge bg-success">
+                                        Available
+                                    </span>
+
+                                </div>
+
+                                <small class="text-muted">
+                                    Capacity: 12 People
+                                </small>
+
+                                <div class="mt-3">
+                                    <button class="btn btn-sm btn-primary">
+                                        Book Now
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="border rounded p-3">
+
+                                <div class="d-flex justify-content-between">
+
+                                    <h6 class="fw-bold">
+                                        Board Room
+                                    </h6>
+
+                                    <span class="badge bg-danger">
+                                        Occupied
+                                    </span>
+
+                                </div>
+
+                                <small class="text-muted">
+                                    Capacity: 20 People
+                                </small>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="border rounded p-3">
+
+                                <div class="d-flex justify-content-between">
+
+                                    <h6 class="fw-bold">
+                                        Training Room
+                                    </h6>
+
+                                    <span class="badge bg-success">
+                                        Available
+                                    </span>
+
+                                </div>
+
+                                <small class="text-muted">
+                                    Capacity: 30 People
+                                </small>
+
+                                <div class="mt-3">
+                                    <button class="btn btn-sm btn-primary">
+                                        Book Now
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- My Meetings -->
+
+        <div class="col-lg-4">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">
+                        My Meetings Today
+                    </h5>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="mb-3 border-start border-4 border-primary ps-3">
+                        <h6 class="mb-1">
+                            Project Review
+                        </h6>
+                        <small class="text-muted">
+                            10:00 AM - 11:00 AM
+                        </small>
+                    </div>
+
+                    <div class="mb-3 border-start border-4 border-success ps-3">
+                        <h6 class="mb-1">
+                            Team Standup
+                        </h6>
+                        <small class="text-muted">
+                            02:00 PM - 03:00 PM
+                        </small>
+                    </div>
+
+                    <div class="mb-3 border-start border-4 border-warning ps-3">
+                        <h6 class="mb-1">
+                            Vendor Discussion
+                        </h6>
+                        <small class="text-muted">
+                            04:00 PM - 05:00 PM
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Upcoming Bookings -->
+
+    <div class="card shadow-sm border-0 mt-4">
+
+        <div class="card-header bg-white">
+
+            <h5 class="mb-0">
+                Upcoming Bookings
+            </h5>
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table class="table table-hover mb-0">
+
+                <thead class="table-light">
+                    <tr>
+                        <th>Room</th>
+                        <th>Meeting</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Organizer</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Conference Room A</td>
+                        <td>Management Review</td>
+                        <td>20-Jun-2026</td>
+                        <td>10:00 AM</td>
+                        <td>Piyush</td>
+                    </tr>
+
+                    <tr>
+                        <td>Board Room</td>
+                        <td>Budget Planning</td>
+                        <td>21-Jun-2026</td>
+                        <td>11:00 AM</td>
+                        <td>Admin</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
